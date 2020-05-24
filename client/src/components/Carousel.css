@@ -1,0 +1,31 @@
+#container{
+    width:100%;
+    position:relative;
+    margin:0 0;
+    padding: 0 0;
+}
+
+#container img{
+    display: inline-block;
+    width:auto;
+    height:90vh;
+}
+
+#buttons-container{
+    position: absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    margin: 0 auto;
+}
+
+#buttons-container .buttons{
+    height:1em;
+    width:1em;
+    display:inline-block;
+    /* border-radius: 50%; */
+    background-color: none;
+    border:2px solid black;
+    margin:0.75em;
+    cursor: pointer;
+}

@@ -3,22 +3,27 @@ const app = express();
 const mongoose = require('mongoose');
 const Item = require('./models/Item');
 
-mongoose.connect('mongodb://localhost:27017', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true});
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', ()=>{
   console.log("Connected to DB...");
 });
 
+app.use(express.json());
+
+app.use('/sample', express.static('./sample'));
+
 app.get('/', async (req,res) =>{
+  let items;
     try{
-      let items = await Item.find();
+      items = await Item.find({}) ? Item.find({}) : "None found";
     }
     catch(err){
-      return err;
+      return res.sendStatus(404);
     }
 
-    res.send(items);
+    return res.send(items);
 });
 
 
