@@ -1,7 +1,7 @@
 #container{
     width:100%;
     position:relative;
-    margin:0 0;
+    margin:0 0 0 0;
     padding: 0 0;
 }
 
@@ -23,7 +23,7 @@
 }
 
 #absolute:hover{
-    background-color:white;
+    background-color:rgba(255,255,255,0.75);
 }
 
 #buttons-container .buttons{

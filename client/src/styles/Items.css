@@ -3,6 +3,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 5em 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 #item-container > h1{
     flex-basis : 100%;
@@ -10,7 +13,7 @@
 
 .item{
     display : inline-block;
-    background-color: white;
+    background-color: transparent;
     /* padding:1em; */
     border-radius:2em;
     text-decoration: none;
@@ -20,9 +23,10 @@
 .item img{
     height:16em;
     width:16em;
-    /* border : 1px solid black; */
-    border-top-left-radius:2em;
-    border-top-right-radius:2em;
+    border : 1px solid black;
+    border-radius: 2em;
+    /* border-top-left-radius:2em; */
+    /* border-top-right-radius:2em; */
     transition: all 0.5s ease;
 }
 
@@ -31,8 +35,9 @@
     border-radius: 0%;
 }
 .item:hover img{
-    border-top-right-radius: 0%;
-    border-top-left-radius: 0%;
+    /* border-top-right-radius: 0%;
+    border-top-left-radius: 0%; */
+    border-radius: 0%;
 }
 
 

@@ -24,6 +24,7 @@ header{
   align-items: center;
   width:100%;
   z-index:2;
+  border-bottom: 1px solid gray;
 }
 nav{
   display: flex;
@@ -44,8 +45,8 @@ h1{
 main{
   margin-top:3em;
   position:relative;
-  height:100vh;
-  background: lightgray;
+  /* height:100vh; */
+  background: white;
 }
 
 button{
@@ -60,4 +61,23 @@ button{
 button img{
   height:100%;
   /* display:inline-block; */
+}
+
+footer{
+  padding:2em;
+  background-color: rgb(212, 250, 255);
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+footer ul{
+  list-style-type: none;
+}
+footer ul li{
+  margin:0.5em;
+}
+footer a:hover{
+  text-decoration: underline;
+  color:navy;
 }

@@ -29,7 +29,8 @@ export default function Carousel(props){
     const previousIMG = usePrevious(currentIMG);
 
     useEffect(() => {
-       let interval = window.setInterval(()=>{
+        window.scrollTo(0,0)
+        let interval = window.setInterval(()=>{
         updateState(currentIMG => currentIMG + 1 < 5 ? currentIMG + 1 : 1)}, 7000);
         return () =>{
             window.clearInterval(interval);
@@ -44,7 +45,7 @@ export default function Carousel(props){
     }, [currentIMG]);
 
     return(
-        <section id="container" style={{backgroundImage:"url("+"http://localhost:4000/sample/"+currentIMG+".jpg"+")"}}>
+        <section id="container" style={{backgroundImage:"url("+"sample/"+currentIMG+".jpg"+")"}}>
             <img src={"sample/"+currentIMG+".jpg"} alt="" />
             <section id="absolute">
                 <section id="text">

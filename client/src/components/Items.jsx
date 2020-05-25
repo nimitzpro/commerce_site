@@ -10,6 +10,7 @@ export default function Items(props){
     const [items, setItems] = useState("None");
 
     useEffect(()=>{
+        window.scrollTo(0,0);
         let items;
         Axios.get('/categories').then((result)=>{
             console.log(result)
@@ -20,7 +21,7 @@ export default function Items(props){
                             <img src={"images/titlepictures/"+i.titlePicture} />
                             <h3>{i.title}</h3>
                             <h4>&euro;{i.price}</h4>
-                            <h4>{i.category.toUpperCase()}</h4>
+                            {/* <h4>{i.category.toUpperCase()}</h4> */}
                         </Link>);
                     })
                 
@@ -35,7 +36,7 @@ export default function Items(props){
 
     return(
         <section id="item-container">
-            <h1>Items : </h1>
+            <h1>Featured Items : </h1>
             {items}
         </section>
     );

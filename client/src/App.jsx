@@ -11,6 +11,7 @@ import Carousel from './components/Carousel.jsx';
 import Items from './components/Items.jsx';
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,9 +28,18 @@ function App() {
       </header>
       <main>
         {/* Welcome to our online shop. We have cool things. */}
-        <Route exact path="/" render={()=><Carousel />} />
+        <Route exact path="/" render={()=><React.Fragment><Carousel /><Items /></React.Fragment>} />
         <Route path="/categories" render={()=><Items />} />
       </main>
+      <footer>
+        <p>&copy; Alexander Stradnic 2020</p>
+        <ul>
+          <li><a href="https://nimitzpro.github.io">My Portfolio</a></li>
+          <li><a href="https://reactjs.org">ReactJS</a></li>
+          <li><a href="https://nodejs.org/en/about/">NodeJS</a></li>
+          <li><a href="https://www.mongodb.com/">MongoDB</a></li>
+        </ul>
+      </footer>
       </BrowserRouter>
     </div>
   );
