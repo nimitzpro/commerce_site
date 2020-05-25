@@ -11,21 +11,31 @@
     height:90vh;
 }
 
-#buttons-container{
+#absolute{
     position: absolute;
     bottom:0;
     right:0;
     left:0;
     margin: 0 auto;
+    width:100%;
+    background-color: rgba(255,255,255,0.35);
+    transition: all 0.5s ease;
+}
+
+#absolute:hover{
+    background-color:white;
 }
 
 #buttons-container .buttons{
     height:1em;
     width:1em;
     display:inline-block;
-    /* border-radius: 50%; */
     background-color: none;
     border:2px solid black;
-    margin:0.75em;
+    margin: 0.5em 0.75em;
     cursor: pointer;
+}
+
+#text > *{
+    margin:0.5em 0;
 }

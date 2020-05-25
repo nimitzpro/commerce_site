@@ -1,5 +1,5 @@
 import React from 'react';
-import './Carousel.css';
+import '../styles/Carousel.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useRef } from 'react';
@@ -29,8 +29,11 @@ export default function Carousel(props){
     const previousIMG = usePrevious(currentIMG);
 
     useEffect(() => {
-       window.setInterval(()=>{
+       let interval = window.setInterval(()=>{
         updateState(currentIMG => currentIMG + 1 < 5 ? currentIMG + 1 : 1)}, 7000);
+        return () =>{
+            window.clearInterval(interval);
+        }
       }, []);
 
     useEffect(() => {
@@ -42,13 +45,20 @@ export default function Carousel(props){
 
     return(
         <section id="container" style={{backgroundImage:"url("+"http://localhost:4000/sample/"+currentIMG+".jpg"+")"}}>
-            <img src={"http://localhost:4000/sample/"+currentIMG+".jpg"} alt="" />
-            <div id="buttons-container">
-                <div onClick={()=>updateState(1)} className="buttons"></div>
-                <div onClick={()=>updateState(2)} className="buttons"></div>
-                <div onClick={()=>updateState(3)} className="buttons"></div>
-                <div onClick={()=>updateState(4)} className="buttons"></div>
-            </div>
+            <img src={"sample/"+currentIMG+".jpg"} alt="" />
+            <section id="absolute">
+                <section id="text">
+                    <h2><a href="/">Cool Cup</a></h2>
+                <p>
+                    This is a description about the cool cup.
+                </p></section>
+                <section id="buttons-container">
+                    <div onClick={()=>updateState(1)} className="buttons"></div>
+                    <div onClick={()=>updateState(2)} className="buttons"></div>
+                    <div onClick={()=>updateState(3)} className="buttons"></div>
+                    <div onClick={()=>updateState(4)} className="buttons"></div>
+                </section>
+            </section>
         </section>
     );
 }

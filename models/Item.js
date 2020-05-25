@@ -11,4 +11,4 @@ let itemSchema = new Schema({
     versionKey : false
 });
 
-const Item = mongoose.model('Item', itemSchema);
+module.exports = mongoose.model("Item", itemSchema);
